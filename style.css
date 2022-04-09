@@ -1,0 +1,104 @@
+:root {
+    /* primary */
+    --primary-violet:  hsl(263, 55%, 52%);
+    --primary-dark-gray-blue:  hsl(217, 19%, 35%);
+    --primary-dark-black-blue:  hsl(219, 29%, 14%);
+    --primary-white:  hsl(0, 0%, 100%);
+
+    /* neutral */
+    --neutral-light-gray: hsl(0, 0%, 81%);
+    --neutral-light-gray-blue: hsl(210, 46%, 95%);
+}
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    min-height: 100vh;
+    display: flex;
+}
+
+.container {
+    margin: auto;
+    display: grid;
+    grid-template-areas: 
+    'daniel daniel jonathan kira'
+    'jeanette patrick patrick kira';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:1rem;
+    width: 90%;
+}
+
+.person {
+    padding: 1rem;
+    box-shadow: 0px 0px 8px 0px gray;
+    border-radius: 0.5rem;
+}
+
+.person > div {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.person > p {
+    opacity: 0.7;
+}
+
+.person span {
+    opacity: 0.5;
+}
+
+.person img {
+    border-radius: 50%;
+}
+
+.daniel {
+    grid-area: daniel;
+    background-color: var(--primary-violet);
+    color: var(--neutral-light-gray-blue);
+}
+.jonathan {
+    grid-area: jonathan;
+    background-color: var(--primary-dark-gray-blue);
+    color: var(--neutral-light-gray-blue);
+}
+.jeanette {
+    grid-area: jeanette;
+    background-color: var(--primary-white);
+}
+.patrick {
+    grid-area: patrick;
+    background-color: var(--primary-dark-black-blue);
+    color: var(--neutral-light-gray-blue);
+}
+.kira {
+    grid-area: kira;
+    background-color: var(--primary-white);
+    
+}
+
+@media (max-width:375px) {
+    .container {
+        margin: auto;
+        display: grid;
+        grid-template-areas: 
+        'daniel'
+        'jonathan'
+        'jeanette'
+        'patrick'
+        'kira'
+        ;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr ;
+        gap:2rem;
+        width: 90%;
+    padding-block:3rem;
+
+    }
+}
